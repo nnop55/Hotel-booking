@@ -1,0 +1,164 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.example-form-field {
+    width: 215px;
+}
+
+h4 {
+    font-weight: bolder;
+}
+
+.mat-typography {
+    width: 650px;
+    padding: 10px 30px;
+}
+
+.price-range {
+    width: 90%;
+    margin: auto;
+}
+
+.price-inputs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+}
+
+.example-radio-button {
+    margin: 5px;
+}
+
+.type-of-place-name {
+    font-size: 16px;
+    margin: 0px;
+}
+
+.type-of-place-text {
+    font-size: 14px;
+    color: rgb(125, 125, 125);
+}
+
+
+.rooms-beds-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.beds,
+.bathrooms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.property-type {
+    margin-top: 10px;
+}
+
+.amenities-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amenities-form .forms {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.amenities-form .forms .example-form {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.plus-one,
+.remove-one {
+    background: none;
+    border: none;
+    border-radius: 30%;
+    box-shadow: 0px 0px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 200ms;
+    min-width: 25px;
+}
+
+.plus-one:hover,
+.remove-one:hover {
+    opacity: 0.8;
+}
+
+.example-section {
+    margin: 12px 0;
+}
+
+.bed-bath-btn {
+    padding: 5px 10px;
+    border: 2px solid #676767;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: #fff;
+    width: 55px;
+    transition: .5s;
+    color: black;
+}
+
+.bed-bath-btn:hover {
+    border: 2px solid black;
+}
+
+.change-btn-color {
+    background: #535252;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.bath-btns,
+.bed-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.property-type-btns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.property-btn {
+    padding: 40px;
+    font-size: 17px;
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    transition: .5s;
+    box-shadow: 0px 0px 2px;
+}
+
+.property-btn:hover {
+    border: 2px solid #bfbdbd;
+}
+
+.property-selected {
+    border: 2px solid #e4e3e3;
+}

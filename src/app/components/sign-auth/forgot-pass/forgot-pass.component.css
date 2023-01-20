@@ -1,0 +1,30 @@
+.container {
+    width: 60%;
+    margin: 130px auto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.forgot-btn input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    background: transparent;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.forgot-btn input:hover {
+    background-color: #fff;
+    color: black;
+}

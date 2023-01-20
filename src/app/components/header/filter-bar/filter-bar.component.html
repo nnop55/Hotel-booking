@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="sides">
+        <div class="left">
+            <div class="btn-left">
+                <button (click)="scrollLeft()">
+                    <mat-icon>arrow_left</mat-icon>
+                </button>
+            </div>
+            <div class="scroll-content" #widgetsContent>
+                <div class="icon" *ngFor="let item of categoriesData" (click)="getByCategoryData(item.id)">
+                    <img [src]="item.icon">
+                    <p>{{item.name}}</p>
+                </div>
+            </div>
+            <div class="btn-right">
+                <button (click)="scrollRight()">
+                    <mat-icon>arrow_right</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="right">
+            <button mat-raised-button (click)="openFilterDialog()">
+                Filter
+            </button>
+        </div>
+    </div>
+</div>

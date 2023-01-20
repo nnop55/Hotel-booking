@@ -1,0 +1,27 @@
+.example-card {
+    width: 350px;
+}
+
+.cards {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin: auto;
+}
+
+.mat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mat-card img {
+    height: 222px;
+    object-fit: cover;
+}
+
+.mat-card-actions {
+    align-self: flex-end;
+}

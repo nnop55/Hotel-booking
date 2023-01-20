@@ -1,0 +1,12 @@
+<div class="cards">
+    <mat-card *ngFor="let item of http.filteredHotels" class="example-card">
+        <img mat-card-image [src]="item.mainImages[0]">
+        <mat-card-content>
+            <p><b>Name</b> : {{item.name}}</p>
+            <p><b>Address</b> : {{item.address}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button routerLink="/hotel-inner/{{item.id}}">Show more</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

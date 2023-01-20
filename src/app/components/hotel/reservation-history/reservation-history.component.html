@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Reservation history</h1>
+    <div class="h2">
+        <h2 *ngIf="reservedHotelsData.length == 0">You don't have history</h2>
+    </div>
+    <div class="cards" *ngIf="reservedHotelsData.length > 0">
+        <mat-card *ngFor="let item of reservedHotelsData" class="example-card">
+            <img mat-card-image [src]="item.hotelImg">
+            <mat-card-content>
+                <p><b>Name</b> : {{item.hotelName}}</p>
+                <p><b>Status</b> : {{item.status}}</p>
+                <p><b>Booked</b> : {{item.startDate}} -- {{item.endDate}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button routerLink="/hotel-inner/{{item.hotelId}}">Show more</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

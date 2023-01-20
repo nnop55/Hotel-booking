@@ -1,0 +1,14 @@
+.container {
+    margin: 130px auto;
+    box-shadow: 0px 0px 2px;
+    border-radius: 5px;
+    width: 90%;
+}
+
+agm-map {
+    height: 600px;
+}
+
+.example-card {
+    max-width: 200px;
+}

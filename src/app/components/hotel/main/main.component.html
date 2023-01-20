@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card-box">
+        <div class="cards" *ngIf="!check.showLoading && http.filteredHotels.length > 0">
+            <app-card></app-card>
+        </div>
+        <div class="btn">
+            <button mat-stroked-button color="primary" *ngIf="check.showAllHotelsBtn" (click)="showAllHotels()">Show all
+                hotels</button>
+        </div>
+    </div>
+    <div class="loading" *ngIf="check.showLoading && http.filteredHotels.length == 0">
+        <app-loading></app-loading>
+    </div>
+</div>

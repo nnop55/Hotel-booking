@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="box">
+        <div class="sides">
+            <div class="left">
+                <div class="single-img">
+                    <img [src]="currentHotel?.mainImages[0]">
+                </div>
+                <div class="txt">
+                    <h2>{{currentHotel?.name}}</h2>
+                    <h3>{{currentHotel?.city}}</h3>
+                </div>
+            </div>
+            <div class="right">
+                <div class="all-img">
+                    <img *ngFor="let item of currentHotel?.mainImages" [src]="item">
+                </div>
+            </div>
+        </div>
+        <div class="hotel-info">
+            <div class="desc">
+                <label><b>Description</b></label>
+                <p>{{currentHotel?.description}}</p>
+            </div>
+            <div class="many-info">
+                <div class="host-place-type">
+                    <div class="host">
+                        <label><b>Host information</b></label>
+                        <p>Name : {{currentHotel?.hostInformation.hostName}}</p>
+                        <p>Language : {{currentHotel?.hostLanguage}}</p>
+                        <p>Email : {{currentHotel?.hostInformation.emailAddress}}</p>
+                        <p>Phone number : {{currentHotel?.hostInformation.phoneNumber}}</p>
+                    </div>
+                    <div class="place-type">
+                        <div class="place">
+                            <p><b>Type of place</b> : {{currentHotel?.typeOfPlace}}</p>
+                            <p><b>Property type</b> : {{currentHotel?.propertyType}}</p>
+                        </div>
+                    </div>
+                    <div class="hotel-rooms">
+                        <div *ngFor="let item of currentHotel?.rooms" class="room-card">
+                            <div class="slider">
+                                <div class="btn-left">
+                                    <button (click)="nextImage(item)">
+                                        <mat-icon>arrow_left</mat-icon>
+                                    </button>
+                                </div>
+                                <div class="scroll-content">
+                                    <div class="slide-img">
+                                        <img [src]="item.images[item.imgIndex ? item.imgIndex : 0]">
+                                    </div>
+                                </div>
+                                <div class="btn-right">
+                                    <button (click)="previousImage(item)">
+                                        <mat-icon>arrow_right</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                            <mat-card-subtitle>
+                                <b>Name</b> : {{item.name}}
+                            </mat-card-subtitle>
+                            <mat-card-subtitle>
+                                <b>Persons</b> : {{item.personsCount}}
+                            </mat-card-subtitle>
+                            <mat-card-subtitle>
+                                <b>Child policy</b> : {{item.childPolicy}}
+                            </mat-card-subtitle>
+                            <mat-card-subtitle>
+                                <b>Beds</b> : {{item.bedsCount}}
+                            </mat-card-subtitle>
+                            <mat-card-subtitle>
+                                <b>Bathrooms</b> : {{item.bathRoomsCount}}
+                            </mat-card-subtitle>
+                            <mat-card-subtitle>
+                                <b>Price</b> : {{item.price}}
+                            </mat-card-subtitle>
+                        </div>
+                    </div>
+                    <div class="reserve-btn">
+                        <button mat-raised-button color="warn" routerLink="/reserve/{{currentHotel?.id}}">Reserve
+                            room</button>
+                    </div>
+                </div>
+                <div class="place-offers">
+                    <div class="place-child" *ngFor="let item of currentHotel?.placeOffers">
+                        <p>{{item}},</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

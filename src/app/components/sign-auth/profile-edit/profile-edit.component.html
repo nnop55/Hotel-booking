@@ -1,0 +1,44 @@
+<div class="container">
+    <form>
+        <mat-card class="example-card">
+            <div class="inputs">
+                <div class="fields">
+                    <mat-form-field class="example-form-field" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input [(ngModel)]="email" name="email" matInput type="email" placeholder="pat@example.com">
+                    </mat-form-field>
+                    <mat-form-field class="example-form-field" appearance="fill">
+                        <mat-label>Fullname</mat-label>
+                        <input [(ngModel)]="fullName" name="fullName" matInput type="text" placeholder="Ex.. John">
+                    </mat-form-field>
+                    <mat-form-field class="example-form-field" appearance="fill">
+                        <mat-label>Phone number</mat-label>
+                        <input [(ngModel)]="phoneNumber" maxlength="10" name="phoneNumber" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="card-inputs">
+                    <h3>Card information</h3>
+                    <mat-form-field class="example-form-field" appearance="fill">
+                        <mat-label>Card number</mat-label>
+                        <input [(ngModel)]="cardNum" maxlength="8" matInput type="text" name="cardNum">
+                    </mat-form-field>
+                    <mat-form-field class="example-form-field" appearance="fill">
+                        <mat-label>CVV</mat-label>
+                        <input [(ngModel)]="cardCvv" maxlength="4" matInput type="text" name="cardCvv">
+                    </mat-form-field>
+                    <mat-form-field class="example-form-field" appearance="fill">
+                        <mat-label>Expiration date</mat-label>
+                        <input [(ngModel)]="cardExpirationDate" name="cardExpirationDate" matInput type="date">
+                    </mat-form-field>
+                    <img src="https://1000logos.net/wp-content/uploads/2017/03/MasterCard-Logo-1990.png">
+                </div>
+            </div>
+            <mat-card-actions>
+                <button mat-button (click)="saveProfileChanges()">Save changes</button>
+            </mat-card-actions>
+            <mat-card-footer>
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </mat-card-footer>
+        </mat-card>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <agm-map [latitude]='lat' [longitude]='long' [zoom]='zoom'>
+        <agm-marker *ngFor="let marker of currentLatLong" [latitude]="marker.latitude" [longitude]="marker.longitude">
+            <agm-info-window #infoWindow>
+                <mat-card class="example-card">
+                    <img mat-card-image [src]="marker.mainImages[0]" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <mat-card-title-group>
+                            <mat-card-subtitle><b>Name</b> : {{marker.name}}</mat-card-subtitle>
+                            <mat-card-subtitle><b>Country</b> : {{marker.country}}</mat-card-subtitle>
+                            <mat-card-subtitle><b>City</b> : {{marker.city}}</mat-card-subtitle>
+                        </mat-card-title-group>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button routerLink="/hotel-inner/{{marker.id}}" mat-button>Show more</button>
+                    </mat-card-actions>
+                </mat-card>
+            </agm-info-window>
+        </agm-marker>
+
+    </agm-map>
+</div>

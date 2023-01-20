@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="datepicker">
+        <mat-form-field>
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date" [(ngModel)]="date['date_from']">
+                <input matEndDate placeholder="End date" [(ngModel)]="date['date_to']">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+        <button mat-raised-button (click)="getDifferenceInDays()">
+            Calculate price and
+            book days</button>
+    </div>
+    <div class="hotel-rooms">
+        <div *ngFor="let item of currentHotelRooms?.rooms" class="room-card">
+            <div class="slider">
+                <div class="btn-left">
+                    <button (click)="nextImage(item)">
+                        <mat-icon>arrow_left</mat-icon>
+                    </button>
+                </div>
+                <div class="scroll-content">
+                    <div class="slide-img">
+                        <img [src]="item.images[item.imgIndex ? item.imgIndex : 0]">
+                    </div>
+                </div>
+                <div class="btn-right">
+                    <button (click)="previousImage(item)">
+                        <mat-icon>arrow_right</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <mat-card-subtitle>
+                <b>Name</b> : {{item.name}}
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+                <b>Persons</b> : {{item.personsCount}}
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+                <b>Child policy</b> : {{item.childPolicy}}
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+                <b>Beds</b> : {{item.bedsCount}}
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+                <b>Bathrooms</b> : {{item.bathRoomsCount}}
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+                <b>Price</b> : {{item.price}}
+            </mat-card-subtitle>
+            <button (click)="reserve(item)" mat-raised-button>Book
+            </button>
+        </div>
+    </div>
+</div>

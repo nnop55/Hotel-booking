@@ -1,0 +1,43 @@
+<div class="container">
+    <mat-card class="example-card">
+        <mat-card-content>
+            <mat-card-title><b>Fullname</b> : {{user?.fullName}}</mat-card-title>
+            <mat-card-title><b>Email</b> : {{user?.email}}</mat-card-title>
+            <mat-card-title><b>Phone number</b> : {{user?.phoneNumber}}</mat-card-title>
+            <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-content>
+            <div class="card-box">
+                <div class="master-card">
+                    <div class="card-content">
+                        <div class="top">
+                            <div class="card-number">
+                                <h2>Card Number - {{user?.cardNum}}</h2>
+                            </div>
+                            <div class="card-cvv">
+                                <h3> CVV - {{user?.cardCvv}}</h3>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="expiration-date">
+                                <h3>Card Expiration date : {{user?.cardExpirationDate}}</h3>
+                            </div>
+                            <div class="fullname">
+                                <h3>{{user?.fullName}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-img">
+                        <img src="https://1000logos.net/wp-content/uploads/2017/03/MasterCard-Logo-1990.png">
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button routerLink="/sign/profile-edit">EDIT</button>
+        </mat-card-actions>
+        <mat-card-footer>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+    </mat-card>
+</div>

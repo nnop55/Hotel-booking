@@ -1,0 +1,98 @@
+<h2 mat-dialog-title>Filter hotels</h2>
+<mat-dialog-content class="mat-typography">
+    <div class="container">
+        <div class="price-range">
+            <h4>Price range</h4>
+            <div class="price-inputs">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Price from</mat-label>
+                    <input matInput type="number" [(ngModel)]="priceRange['value_From']">
+                    <button *ngIf="priceRange['value_From']" matSuffix mat-icon-button aria-label="Clear"
+                        (click)="priceRange['value_From']=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Price to</mat-label>
+                    <input matInput type="number" [(ngModel)]="priceRange['value_To']">
+                    <button *ngIf="priceRange['value_To']" matSuffix mat-icon-button aria-label="Clear"
+                        (click)="priceRange['value_To']=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="type-of-place">
+            <h4>Type of place</h4>
+            <div class="type-of-place-checkbox">
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    [(ngModel)]="selectedPlace">
+                    <mat-radio-button class="example-radio-button" *ngFor="let item of typeOfPlaceArray"
+                        [value]="item.name" ngDefaultControl [(ngModel)]="item.clicked">
+                        <p class="type-of-place-name">{{item.name}}</p>
+                        <p class="type-of-place-text">{{item.text}}</p>
+                    </mat-radio-button>
+                </mat-radio-group>
+                <div>Your have choosed: {{selectedPlace}}</div>
+            </div>
+        </div>
+        <div class="rooms-beds">
+            <h4>Rooms and beds</h4>
+            <div class="rooms-beds-box">
+                <div class="bathrooms">
+                    <p>Bathrooms</p>
+                    <div class="bath-btns">
+                        <button *ngFor="let item of bathroomsArray" [ngClass]="{'change-btn-color':item.clicked}"
+                            (click)="bathroomsClick(item)" class="bed-bath-btn">{{item.name}}</button>
+                    </div>
+                </div>
+                <div class="beds">
+                    <p>Beds</p>
+                    <div class="bed-btns">
+                        <button *ngFor="let item of bedsArray" [ngClass]="{'change-btn-color':item.clicked}"
+                            (click)="bedsClick(item)" class="bed-bath-btn">{{item.name}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="property-type">
+            <h4>Property type</h4>
+            <div class="property-type-btns">
+                <button *ngFor="let item of propertyTypeArray" [ngClass]="{'property-selected': item.clicked}"
+                    (click)="propertyTypeClick(item)" class="property-btn">
+                    <i [class]="item.icon"></i> {{item.name}}
+                </button>
+            </div>
+        </div>
+        <div class="amenities">
+            <h4>Amenities</h4>
+            <div class="amenities-form">
+                <div class="forms">
+                    <form class="example-form" *ngFor="let item of amenitiesForm;let i = index">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Enter amenities</mat-label>
+                            <input matInput [ngModelOptions]="{standalone: true}" ngDefaultControl
+                                [(ngModel)]="item.value" placeholder="Ex. Wifi">
+                        </mat-form-field>
+                        <button class="plus-one" *ngIf="i == 0" (click)="addAmenitiesForm()">+</button>
+                        <button class="remove-one" *ngIf="i > 0" (click)="removeAmenitiesForm(i)">-</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="host-language">
+            <h4>Host language</h4>
+            <div class="host-language-checkbox">
+                <div class="language-checkbox-inp">
+                    <section class="example-section" *ngFor="let item of hostLanguageArray">
+                        <p><mat-checkbox [(ngModel)]="item.clicked" ngDefaultControl>{{item.name}}</mat-checkbox></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="filterBtn()">Filter</button>
+</mat-dialog-actions>

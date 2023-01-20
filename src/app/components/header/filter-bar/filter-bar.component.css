@@ -1,0 +1,72 @@
+.container {
+    padding: 2px 10px;
+}
+
+.left {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+}
+
+.scroll-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow: auto;
+    width: 90%;
+}
+
+.scroll-content::-webkit-scrollbar {
+    display: none;
+}
+
+.icon img {
+    width: 25px;
+}
+
+.icon {
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.sides {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon:hover {
+    color: rgb(106, 106, 106);
+}
+
+.btn-left button,
+.btn-right button {
+    background: none;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 0px 5px cornflowerblue;
+    border-radius: 600px;
+    transition: .5s;
+    color: rgb(29, 70, 147);
+}
+
+.btn-left mat-icon,
+.btn-right mat-icon {
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-left button:hover,
+.btn-right button:hover {
+    box-shadow: 0px 0px 5px rgb(106, 54, 54);
+    color: rgb(106, 54, 54);
+}

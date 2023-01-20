@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>Register account</h2>
+<form #form="ngForm" (ngSubmit)="signUp(form)">
+    <mat-dialog-content class="mat-typography">
+        <div class="container">
+            <div class="forms">
+                <div class="fields">
+                    <div class="inputs">
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input ngModel name="email" matInput type="email" placeholder="pat@example.com">
+                        </mat-form-field>
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Fullname</mat-label>
+                            <input ngModel name="fullName" matInput type="text" placeholder="Ex.. John">
+                        </mat-form-field>
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Phone number</mat-label>
+                            <input ngModel maxlength="10" name="phoneNumber" matInput>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input ngModel name="password" matInput [type]="hide ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Confirm password</mat-label>
+                            <input ngModel name="confPassword" matInput [type]="hide ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="card-inputs">
+                        <h3>Card information</h3>
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Card number</mat-label>
+                            <input ngModel maxlength="8" matInput type="text" name="cardNum">
+                        </mat-form-field>
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>CVV</mat-label>
+                            <input ngModel maxlength="4" matInput type="text" name="cardCvv">
+                        </mat-form-field>
+                        <mat-form-field class="example-form-field" appearance="fill">
+                            <mat-label>Expiration date</mat-label>
+                            <input ngModel name="cardExpirationDate" matInput type="date">
+                        </mat-form-field>
+                        <img src="https://1000logos.net/wp-content/uploads/2017/03/MasterCard-Logo-1990.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button [mat-dialog-close]="true" type="submit" cdkFocusInitial>Register</button>
+    </mat-dialog-actions>
+</form>

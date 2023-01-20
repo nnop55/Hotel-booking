@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Log In to your account</h2>
+<form #form="ngForm" (ngSubmit)="signIn(form)">
+    <mat-dialog-content class="mat-typography">
+        <div class="container">
+            <div class="forms">
+                <div class="inputs">
+                    <mat-form-field class="example-form-field" appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <input ngModel name="email" matInput type="email" placeholder="pat@example.com">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input ngModel name="password" matInput [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="bottom">
+                <a [mat-dialog-close]="true" routerLink="/sign/forgot-pass">Forgot Password?</a>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button [mat-dialog-close]="true" type="submit" cdkFocusInitial>Log In</button>
+    </mat-dialog-actions>
+</form>

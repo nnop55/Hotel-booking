@@ -1,0 +1,30 @@
+<nav>
+    <div class="container">
+        <div class="left">
+            <button mat-raised-button routerLink="/" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}">Hotels</button>
+            <button class="map"><i class="ri-road-map-fill" routerLinkActive="active"
+                    routerLink="/google-map"></i></button>
+        </div>
+        <div class="right">
+            <button *ngIf="!firebase.checkUser" mat-icon-button color="primary" [matMenuTriggerFor]="menu"
+                aria-label="Example icon button with a menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openSignIn()">Log In</button>
+                <button mat-menu-item (click)="openSignUp()">Register</button>
+            </mat-menu>
+            <div class="right-btns">
+                <button *ngIf="firebase.checkUser" mat-raised-button routerLink="/reservation-history">Reservation
+                    history</button>
+                <button *ngIf="firebase.checkUser" routerLink="/sign/profile" mat-raised-button
+                    color="primary">Profile</button>
+                <button *ngIf="firebase.checkUser" mat-raised-button color="primary" (click)="logOut()">Log out</button>
+            </div>
+        </div>
+    </div>
+    <div class="filter-bar" *ngIf="checkService.showCategories">
+        <app-filter-bar></app-filter-bar>
+    </div>
+</nav>

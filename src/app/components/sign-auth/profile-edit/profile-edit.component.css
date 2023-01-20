@@ -1,0 +1,33 @@
+.container {
+    width: 60%;
+    margin: 130px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px;
+}
+
+.inputs,
+.card-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.fields {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-inputs {
+    box-shadow: 0px 0px 3px;
+    padding: 10px;
+}
+
+.card-inputs img {
+    width: 50px;
+}

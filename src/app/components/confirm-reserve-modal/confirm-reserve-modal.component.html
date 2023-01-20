@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>Reserve room</h2>
+<mat-dialog-content class="mat-typography">
+    <div class="titles">
+        <div class="txt">
+            <h3>Are you sure reserve this room?</h3>
+        </div>
+        <div class="contact">
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Add your contact</mat-label>
+                <input maxlength="10" matInput type="text" placeholder="(not required)">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="card-box">
+        <div class="master-card">
+            <div class="card-content">
+                <div class="top">
+                    <div class="card-number">
+                        <h2>Card Number - {{user?.cardNum}}</h2>
+                    </div>
+                    <div class="card-cvv">
+                        <h3> CVV - {{user?.cardCvv}}</h3>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="expiration-date">
+                        <h3>Card Expiration date : {{user?.cardExpirationDate}}</h3>
+                    </div>
+                    <div class="fullname">
+                        <h3>{{user?.fullName}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-img">
+                <img src="https://1000logos.net/wp-content/uploads/2017/03/MasterCard-Logo-1990.png">
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>No</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Yes</button>
+</mat-dialog-actions>
